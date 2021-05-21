@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&family=Roboto:wght@100&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    *font-family: 'Roboto', sans-serif;
+    font-family: 'Lemonada', cursive;
+}
+
+body{
+    background: linear-gradient(to right, #ebcd49fb, #d67b03e7);
+}
+.contener-menu{
+    width: 1000px;
+    height: 650px;
+    display:flex;
+    margin: auto;
+    margin-top: 50px;
+    perspective: 1500px;
+}
+.pagina-izquierda,
+.pagina-central,
+.pagina-derecha{
+    padding: 10px;
+    width: 100%;
+    height: 125%;
+}
+
+.pagina-izquierda{
+    background-image: linear-gradient(to right, #ffffff, #f5f5f5, #eaeaea, #e0e0e0, #d6d6d6);
+}
+
+.pagina-central{
+    background-image: linear-gradient(to right, #ffffff, #f8f8f8, #f1f1f1, #eaeaea, #e3e3e3);
+}
+
+.pagina-derecha{
+    background-image: linear-gradient(to right, #ffffff, #fbfbfb, #f6f6f6, #f2f2f2, #eeeeee);
+}
+
+.contenedor-lista{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.lista-uno,
+.lista-dos,
+.lista-tres{
+    width: 100%;
+    text-align: center;
+}
+
+.lista-uno p,
+.lista-dos p,
+.lista-tres p{
+    align-items: center;
+}
+
+.lista-uno h1,
+.lista-dos h1,
+.lista-tres h1{
+    font-size: 24px;
+    text-align: center;
+}
+
+.lista-uno img,
+.lista-dos img,
+.lista-tres img{
+    width: 100px;
+    height: 80px;
+}
+
+.lista-uno p,
+.lista-dos p,
+.lista-tres p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.lista-uno hr,
+.lista-dos hr,
+.lista-tres hr{
+    width: 100px;
+    height: 3px;
+    margin: auto;
+    border-style: none;
+    background: -webkit-linear-gradient(left, red, blue, rgb(0, 191, 216));
+    margin-top: 10px;
+}
+
+.pagina-izquierda{
+    transform:rotateY(180deg);
+    transition: all 1s;
+    transform-origin: right;
+    transform-style: preserve-3d;
+    z-index: 10;
+}
+
+.pagina-izquierda2{
+    transform:rotateY(0deg);
+}
+
+.pagina-derecha{
+    transform:rotateY(-180deg);
+    transform-origin: left;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.pagina-derecha2{
+    transform:rotateY(0deg);
+}
+
+.lado-pagina-derecha{
+    backface-visibility: hidden;
+}
+
+.pagina-derecha-atras{
+    transform:rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 6px double #3f3f3f;
+    border-right: none;
+}
+
+.lado{
+    backface-visibility: hidden;
+}
+
+.delante{
+    transform:rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+}
+
+.delante img{
+    width: 250px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.delante h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.delante h3{
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+.delante h4{
+    margin-top: 10px;
+}
+
+.delante p{
+    margin-top: 10px;
+}
+
+.delante ul{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.delante ul h5{
+    font-size: 16px;
+}
+
+.delante ul label{
+    font-size: 14px;
+    margin-top: 4px;
+    margin-left: 15px;
+}
+
+.delante button{
+    width: 200px;
+    padding: 6px;
+    background: chocolate;
+    border-style: none;
+    border-radius: 8px;
+    color: white;
+    margin-top: 10px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.delante button:hover{
+    transform: translateY(10px);
+    box-shadow: 0px -5px 10px 0px #969696;
+}
+.delante hr{
+    width: 200px;
+    height: 3px;
+    border-style: none;
+    margin: auto;
+    background: -webkit-linear-gradient(left, #f4e48a, #212120, rgb(236, 81, 81) );
+    margin-top: 10px;
+}
+
+.btn-cerrar{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 3;
+    filter: blur(1px);
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.btn-cerrar:hover{
+    filter: blur(0px);
+}
+
+.burbuja{
+    background: #fff;
+    border-radius: 50%;
+    opacity: .3;
+
+    position: absolute;
+    bottom: -150;
+  
+    animation: burbujas 3s linear infinite;
+}
+
+.burbuja:nth-child(1){
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(2){
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(3){
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1s;
+    animation-delay: 7s;
+}
+
+.burbuja:nth-child(4){
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(5){
+    width: 100px;
+    height: 100px;
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(6){
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.burbuja:nth-child(7){
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(8){
+    width: 120px;
+    height: 120px;
+    left: 52%;
+    animation-duration: 5s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(9){
+    width: 60px;
+    height: 60px;
+    left: 51%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.burbuja:nth-child(10){
+    width: 40px;
+    height: 40px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+
+
+@keyframes burbujas{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    30%{
+        transform: translateX(30px);
+    }
+    50%{
+        opacity: .4;
+    }
+    100%{
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes movimiento{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@media (max-width : 400px) {
+    .slider-portada{
+        width: 100%;
+        height: 300%;
+    }
+}
+
+@media (max-width : 500px) {
+    .slider-portada{
+        width: 100%;
+        height: 350%;
+    }
+}
+
+
+@media (min-width: 600px) {
+    .slider-portada{
+        width: 100px;
+        height: 400px;
+    }
+}
+
+@media (min-width: 768px) {
+    .slider-portada{
+        width: 100%;
+        height: 420px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .slider-portada{
+        width: 100%;
+        height: 440px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .slider-portada{
+        width: 100%;
+        height: 600px;
+    }
+}
+
